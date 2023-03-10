@@ -10,21 +10,21 @@ function AboutContent() {
       <div className="left">
         <h1>WHO AM I?</h1>
         <p>I am the react full-stack developer.
-             I create responsive secure websites for clients.
-             </p>
+          I create responsive secure websites for clients.
+        </p>
         <Link to="/contact">
-            <button className="btn">Contact</button>
+          <button className="btn">Contact</button>
         </Link>
 
       </div>
       <div className="right">
-        <div className="img-container"> 
-        <div className="img-stack top"> 
-        <img src={work3} className="img" alt="true"/>
-        </div>
-        <div className="img-stack bottom"> 
-        <img src={work2} className="img" alt="true"/>
-        </div>
+        <div className="img-container">
+          <div className="img-stack top">
+            <img src={work3} className="img" alt="true" />
+          </div>
+          <div className="img-stack bottom">
+            <img src={work2} className="img" alt="true" />
+          </div>
         </div>
       </div>
 

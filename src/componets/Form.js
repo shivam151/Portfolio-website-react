@@ -11,29 +11,26 @@ function Form() {
     subject: "",
     message: ""
   })
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!data.name || !data.email || !data.subject || !data.message) {
-      alert("mdssa")
+      alert("Empty")
       return;
     }
-    try {
-      const data = await fetch(`https://portfolio-backend-fqba52xby-shivam151.vercel.app/v/msg`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      }).then(data => {
-        console.log(data);
-          setData({name : "", email : "", subject : "", message : ""})
-      }).catch(err => {
-        console.log(err);
-      })
-    } catch (error) {
-      console.log("Something went wrong try again");
-    }
+    await fetch(`https://portfolio-backend-fqba52xby-shivam151.vercel.app/v/msg`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then(data => {
+      alert("Success")
+      setData({ name: "", email: "", subject: "", message: "" })
+    }).catch(err => {
+      alert("Error")
+      console.log(err);
+    })
   }
 
   const handleonChange = (e) => {
@@ -44,16 +41,16 @@ function Form() {
     <div className="form">
       <div className="cform">
         <label>Your Name</label>
-        <input type="text" name="name" value={data.name} onChange={handleonChange} />
+        <input type="text" className="input_field" name="name" value={data.name} onChange={handleonChange} />
 
         <label>Email</label>
-        <input type="email" name="email" value={data.email} onChange={handleonChange} />
+        <input type="email" className="input_field" id="email" name="email" value={data.email} onChange={handleonChange} />
 
         <label>Subject</label>
-        <input type="text" name="subject" value={data.subject} onChange={handleonChange} />
+        <input type="text" className="input_field" id="subject" name="subject" value={data.subject} onChange={handleonChange} />
 
         <label>Message</label>
-        <textarea rows="6" placeholder="Type your message here" name="message" value={data.message} onChange={(e) => handleonChange(e)}></textarea>
+        <textarea rows="6" id="message" className="input_field" placeholder="Type your message here" name="message" value={data.message} onChange={(e) => handleonChange(e)}></textarea>
 
         <button className="btn" onClick={handleSubmit}>Submit</button>
       </div>
