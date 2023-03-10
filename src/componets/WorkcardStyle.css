@@ -10,6 +10,8 @@
     grid-template-columns: repeat(3,1fr);
     grid-gap: 40px;
     padding-bottom: 5rem;
+    align-items: center;
+    justify-content: center;
 }
 .project-card{
     background-color: #1a1919;
@@ -32,7 +34,7 @@
 .pro-btns{
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    padding: 2 rem ;
 }
 .pro-btns .btn{
     padding: 0.5rem 1rem;
